@@ -137,3 +137,6 @@ nav {
     left: 50%;
     transform: translateX(-50%)
 }
+nav.scroll{
+    background: var(--primary-color)
+}
