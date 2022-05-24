@@ -6,7 +6,12 @@
 :root{
     --primary-color: hsl(178, 100%,26%);
     --headline: hsl(210,11% , 15%);
-    -paragraph: hsl(210, 9%, 31%);
+    --paragraph: hsl(210, 9%, 31%);
+    --brand-beige: hsl(39, 100%, 97%);
+    --brand-light: hsl(178, 23%,89%);
+
+    --nav-height: 7.2rem;
+
     font-size:62.5%
 }
 body{
@@ -15,37 +20,59 @@ body{
 
     text-align: center;
 }
-h4{
+.wrapper{
+
+    width:37.5rem;
+    margin-inline: auto;
+    padding-inline: 2.4rem;
+}
+/* HEADER XXXXXXXXXXXXX*/
+header{
+    margin-top: calc(  4.1rem + var(--nav-height) )
+    
+    
+}
+header::before{
+    content: "";
+    width:100vw;
+    height:calc(108rem + var(--nav-height));
+    background-color: var(--brand-light);
+    display: block;
+
+    position:absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+/* Geral XXXXXXXXXXXXX*/
+header h4{
     font-size:1.4rem;
     color: var(--primary-color);
     margin-bottom: 1.6rem;
 
 }
-h1{
+header h1{
     font-size:3.4rem;
     color: var(--headline-color);
     line-height:130%;
     margin-bottom:2.4rem
 
 }
-p{
+header p{
     font-size:1.8rem;
     line-height:130%;
     color: var(--paragraph);
     font-weight: 400;
+    margin-bottom:2.4rem
 }
-header{
-    width:37.5rem;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 4.1rem;
+header  #img{
+    width:26.4rem;
+    display: block;
+    margin-inline: auto;
+    object-position: 0 2rem;
+}
 
-   
-}
-img{
-    
-}
-button{
+header button{
     background: var(--primary-color);
 
     border: none;
@@ -53,7 +80,60 @@ button{
 
     height: 6.2rem;
     width:26.3rem;
-     color: #fff;
+    margin-bottom:  6rem;
+    margin-left: auto;
+    margin-right: auto;
+    
+    
+    color: #fff;
+    text-transform: uppercase;
+    font-size:1.4rem;
+    font-weight:700;
 
-     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem
+
+}
+.stats{
+    width:32.7rem;
+   padding-block: 4rem;
+    
+    margin-inline: auto;
+
+    background: var(--brand-beige);
+    border:1px solid var(--brand-light);
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6rem;
+}
+.stats .stat h3{
+    color: var(--headline);
+    font-size: 4.8rem;
+    line-height:130%;
+
+    margin: bottom 0.4rem;
+    
+}
+.stats .stat p{
+    margin:0;
+    color: var(--primary-color);
+    font-size: 1.6rem;
+}
+/* NAVIGATIOB XXXXXXXXXXXXX*/
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    
+   height: var(--nav-height);
+
+    position:fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%)
 }
