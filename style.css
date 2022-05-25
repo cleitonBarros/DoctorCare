@@ -2,7 +2,9 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    list-style: none;
 }
+
 :root{
     --primary-color: hsl(178, 100%,26%);
     --headline: hsl(210,11% , 15%);
@@ -14,9 +16,12 @@
 
     font-size:62.5%
 }
+html,
 body{
     font-family:'DM-sans',sans-serif;
     font-size:1.6rem;
+    width: 100%;
+    height: 100%;
 
     text-align: center;
 }
@@ -34,7 +39,7 @@ header{
 }
 header::before{
     content: "";
-    width:100vw;
+    width:100%;
     height:calc(108rem + var(--nav-height));
     background-color: var(--brand-light);
     display: block;
@@ -146,9 +151,76 @@ nav.scroll{
     background: var(--primary-color);
     width: 100vw;
 }
-nav.scroll svg:nth-child(1) path{
+nav.scroll button svg:nth-child(1) path{
     fill:white;
 }
-nav.scroll svg:nth-child(2) path{
+nav.scroll button  svg:nth-child(2) path{
    stroke: white;
+}
+/*menu expanded*/
+
+body.menu-expanded{
+    overflow:hidden;
+}
+.menu, .menu-close,  body.menu-expanded .menu-open{
+    opacity: 0;
+    visibility: hidden;
+}
+
+body.menu-expanded .menu, body.menu-expanded .menu-close{
+
+    opacity: 1;
+    visibility: visible;
+
+}
+body.menu-expanded .menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--primary-color);
+
+    width: 100vw;
+    height: 100vh;
+}
+body.menu-expanded nav{
+    position: relative;
+}
+.menu ul:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+    margin-top: 6rem;
+
+    font-size:2.4rem;
+    font-weight:700;
+    line-height:3.1rem;
+}
+.menu ul li a{
+    
+        color: white;
+        text-decoration: none;;
+
+}
+.menu .button{
+    background: white;
+    border-radius: 4rem;
+    font-weight: 700;
+    font-size:1.8rem;
+    line-height: 2.3rem;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    color: var(--primary-color);
+
+    display: inline-block;
+    padding:16px 32px;
+
+    margin-bottom: 8rem;
+    margin-top: 4.8rem;
+}
+.social-links{
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 3.8rem;
 }
