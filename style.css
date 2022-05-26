@@ -6,17 +6,21 @@
 }
 
 :root{
-    --primary-color: hsl(178, 100%,26%);
+    --primary-color: hsl(170, 100%,26%);
     --headline: hsl(210,11% , 15%);
     --paragraph: hsl(210, 9%, 31%);
     --brand-beige: hsl(39, 100%, 97%);
     --brand-light: hsl(178, 23%,89%);
+    --bg-light: hsl(178, 23%, 89%);
 
     --nav-height: 7.2rem;
 
     font-size:62.5%
 }
   
+html{
+    scroll-behavior:smooth;
+}
 html,body{
 
     width: 100%;
@@ -30,6 +34,8 @@ body{
 
     overflow: overlay;
 
+    background:var(--bg-light);
+
 
 }
 .wrapper{
@@ -40,7 +46,7 @@ body{
 }
 /* HEADER XXXXXXXXXXXXX*/
 header{
-    margin-top: calc(  4.1rem + var(--nav-height) )
+    padding-top: calc(  4.1rem + var(--nav-height) )
     
     
 }
@@ -192,6 +198,9 @@ body.menu-expanded .menu, body.menu-expanded .menu-close{
 body.menu-expanded .menu-close{
     margin-right: -2.7rem;
 }
+.menu{
+    transform:translateY(100%)
+}
 body.menu-expanded .menu{
     position: fixed;
     top: 0;
@@ -202,6 +211,9 @@ body.menu-expanded .menu{
     height: 100vh;
 
     padding-top: var(--nav-height);
+
+    transition: transform 300ms;
+    transform:translateY(0)
 }
 body.menu-expanded nav{
     position: relative;
@@ -259,4 +271,45 @@ body.menu-expanded .logo path{
 body.menu-expanded button svg path{
     stroke: white;
 
+}
+/*SERViCES ------------------------------------*/
+#services header h4{
+    font-size: 1.4rem;
+    line-height: 150%;
+    letter-spacing:0.08rem;
+
+    color: var(--primary-color);
+
+    text-transform: uppercase;
+
+    margin-bottom:1.6rem;
+}
+
+#services header h2{
+    font-size: 3rem;
+    line-height:3.9rem;
+
+    color: var(--headline);
+
+    margin-bottom:6rem
+
+
+}
+#services .cards{
+    display: flex;
+    flex-direction: column;
+    gap:3.2rem;
+}
+#services .card{
+    padding:2.4rem;
+    text-align:left;
+
+     background: white;
+
+     border:1px solid var(--brand-light);
+    
+     border-radius:.6rem;
+}
+#services .card h3{
+    margin-block: 1.6rem;
 }
