@@ -11,6 +11,9 @@ function onScroll(){
 
 
 }
+function toggle(){
+    document.body.classList.toggle('menu-expanded')
+}
 
 
 

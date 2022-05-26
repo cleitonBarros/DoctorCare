@@ -16,14 +16,21 @@
 
     font-size:62.5%
 }
-html,
+  
+html,body{
+
+    width: 100%;
+    height: 100%;
+}
 body{
     font-family:'DM-sans',sans-serif;
     font-size:1.6rem;
-    width: 100%;
-    height: 100%;
 
     text-align: center;
+
+    overflow: overlay;
+
+
 }
 .wrapper{
 
@@ -151,16 +158,25 @@ nav.scroll{
     background: var(--primary-color);
     width: 100vw;
 }
-nav.scroll button svg:nth-child(1) path{
+nav.scroll  svg:nth-child(1) path{
     fill:white;
 }
-nav.scroll button  svg:nth-child(2) path{
+nav.scroll button  path{
    stroke: white;
 }
-/*menu expanded*/
 
+/*menu expanded*/
+nav button{
+    background: none;
+    cursor: pointer;
+    border: none;
+
+}
 body.menu-expanded{
     overflow:hidden;
+}
+body.menu-expanded> :not(nav){
+    display:none;
 }
 .menu, .menu-close,  body.menu-expanded .menu-open{
     opacity: 0;
@@ -173,6 +189,9 @@ body.menu-expanded .menu, body.menu-expanded .menu-close{
     visibility: visible;
 
 }
+body.menu-expanded .menu-close{
+    margin-right: -2.7rem;
+}
 body.menu-expanded .menu{
     position: fixed;
     top: 0;
@@ -181,6 +200,8 @@ body.menu-expanded .menu{
 
     width: 100vw;
     height: 100vh;
+
+    padding-top: var(--nav-height);
 }
 body.menu-expanded nav{
     position: relative;
@@ -223,4 +244,19 @@ display: flex;
 align-items: center;
 justify-content: center;
 gap: 3.8rem;
+}
+
+/*logo menu*/
+body.menu-expanded .logo,body.menu-expanded button{
+    position: relative;
+    z-index: 100;
+}
+
+body.menu-expanded .logo path{
+    fill: white;
+}
+
+body.menu-expanded button svg path{
+    stroke: white;
+
 }
