@@ -149,10 +149,8 @@ nav {
 
     position:fixed;
     top: 0;
+   
     width: 100vw;
- 
-
-    z-index: 100;
 
     
 }
@@ -314,4 +312,4 @@ body.menu-expanded button svg path{
 #services .card h3{
     margin-block: 1.6rem;
 }
-/*********Abaout*88888888/
+/***abourt*/

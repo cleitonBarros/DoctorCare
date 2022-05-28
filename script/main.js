@@ -23,8 +23,9 @@ ScrollReveal({
     duration: 700,
 
 }).reveal(`
-#home, #home img, #home .states,
+#home, #home img, #home .stats,
 #services, #services header, #services .card,
-`)
+`);
+
 
 
