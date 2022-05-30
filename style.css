@@ -11,7 +11,7 @@
     --paragraph: hsl(210, 9%, 31%);
     --brand-beige: hsl(39, 100%, 97%);
     --brand-light: hsl(178, 23%,89%);
-    --bg-light: hsl(178, 23%, 89%);
+    --bg-light: hsl(180, 14%, 97%);
 
     --nav-height: 7.2rem;
 
@@ -44,13 +44,53 @@ body{
     margin-inline: auto;
     padding-inline: 2.4rem;
 }
+img{
+    max-width: 100%;
+}
+
+section{
+padding-block:10rem ;
+}
+section header h4{
+    font-size:1.4rem;
+    font-weight:700;
+    line-height:150%;
+    letter-spacing: .08rem;
+    color: var(--primary-color);
+
+    text-transform: uppercase;
+
+    margin-bottom: 1.6rem;
+}
+section header h2{
+    font-size: 3rem;
+    line-height:3.9rem;
+
+    color: var(--headline);
+
+    
+}
+section header h1{
+    font-size:3.4rem;
+    color: var(--headline-color);
+    line-height:130%;
+    margin-bottom:2.4rem
+    
+}
+section .content p{
+    font-weight: 400;
+    font-size:1.6rem;
+    line-height:150%;
+    color: var(--paragraph)
+}
+
 /* HEADER XXXXXXXXXXXXX*/
-header{
+#home{
     padding-top: calc(  4.1rem + var(--nav-height) )
     
     
 }
-header::before{
+#home::before{
     content: "";
     width:100%;
     height:calc(108rem + var(--nav-height));
@@ -63,34 +103,22 @@ header::before{
     z-index: -1;
 }
 /* Geral XXXXXXXXXXXXX*/
-header h4{
-    font-size:1.4rem;
-    color: var(--primary-color);
-    margin-bottom: 1.6rem;
 
-}
-header h1{
-    font-size:3.4rem;
-    color: var(--headline-color);
-    line-height:130%;
-    margin-bottom:2.4rem
-
-}
-header p{
+#home p{
     font-size:1.8rem;
-    line-height:130%;
+    line-height:150%;
     color: var(--paragraph);
     font-weight: 400;
-    margin-bottom:2.4rem
+    margin-bottom:3.2rem
 }
-header  #img{
+#home  #img{
     width:26.4rem;
     display: block;
     margin-inline: auto;
     object-position: 0 2rem;
 }
 
-header button{
+#home button{
     background: var(--primary-color);
 
     border: none;
@@ -114,10 +142,9 @@ header button{
     gap: 1.6rem
 
 }
-.stats{
+#home .stats{
     width:32.7rem;
-   padding-block: 4rem;
-    
+    padding-block: 4rem;
     margin-inline: auto;
 
     background: var(--brand-beige);
@@ -128,7 +155,7 @@ header button{
     justify-content: center;
     gap: 6rem;
 }
-.stats .stat h3{
+#home .stats .stat h3{
     color: var(--headline);
     font-size: 4.8rem;
     line-height:130%;
@@ -136,10 +163,11 @@ header button{
     margin: bottom 0.4rem;
     
 }
-.stats .stat p{
+#home .stats .stat p{
     margin:0;
     color: var(--primary-color);
     font-size: 1.6rem;
+    line-height: 150%;
 }
 /* NAVIGATIOB XXXXXXXXXXXXX*/
 nav {
@@ -152,7 +180,7 @@ nav {
    
     width: 100vw;
 
-    
+    z-index: 100;   
 }
 nav .wrapper{
     display: flex;
@@ -163,7 +191,7 @@ nav .wrapper{
 nav.scroll{
     background: var(--primary-color);
 }
-nav.scroll  svg:nth-child(1) path{
+nav.scroll .logo path{
     fill:white;
 }
 nav.scroll button  path{
@@ -176,19 +204,24 @@ nav button{
     cursor: pointer;
     border: none;
 
+    
+/*=== MENU-EXPANDED =================================*/
 }
 body.menu-expanded{
     overflow:hidden;
 }
-body.menu-expanded> :not(nav){
-    display:none;
+body.menu-expanded > :not(nav){
+    visibility:hidden;
 }
-.menu, .menu-close,  body.menu-expanded .menu-open{
+.menu, 
+.menu-close,  
+body.menu-expanded .menu-open{
     opacity: 0;
     visibility: hidden;
 }
 
-body.menu-expanded .menu, body.menu-expanded .menu-close{
+body.menu-expanded .menu, 
+body.menu-expanded .menu-close{
 
     opacity: 1;
     visibility: visible;
@@ -214,9 +247,7 @@ body.menu-expanded .menu{
     transition: transform 300ms;
     transform:translateY(0)
 }
-body.menu-expanded nav{
-    position: relative;
-}
+
 .menu ul:nth-child(1) {
     display: flex;
     flex-direction: column;
@@ -254,11 +285,12 @@ body.menu-expanded nav{
 display: flex;
 align-items: center;
 justify-content: center;
-gap: 3.8rem;
+gap: 3.2rem;
 }
 
 /*logo menu*/
-body.menu-expanded .logo,body.menu-expanded button{
+body.menu-expanded .logo,
+body.menu-expanded button{
     position: relative;
     z-index: 100;
 }
@@ -285,13 +317,9 @@ body.menu-expanded button svg path{
 }
 
 #services header h2{
-    font-size: 3rem;
-    line-height:3.9rem;
-
-    color: var(--headline);
+   
 
     margin-bottom:6rem
-
 
 }
 #services .cards{
@@ -313,3 +341,15 @@ body.menu-expanded button svg path{
     margin-block: 1.6rem;
 }
 /***abourt*/
+#about{
+    text-align:left;
+    background: var(--brand-beige)
+}
+#about h2 {
+    margin-bottom: 2.4rem;
+} 
+#about .content p{
+    margin-top:2.4rem;
+    margin-bottom:6rem;
+
+}
