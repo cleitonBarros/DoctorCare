@@ -1,16 +1,26 @@
 
  const nav = document.getElementById('navigation')
-
-function onScroll(){
-    if(scrollY>0){
-
-        nav.classList.add('scroll')
+ const backToTop = document.getElementById('backToTopButton')
+ 
+ function onScroll(){
+     showNavOnScroll()
+     showBackToTopBtnOnScroll()
+ }
+ function showNavOnScroll(){
+     if(scrollY>0){
+         nav.classList.add('scroll')
+     }else{
+         nav.classList.remove('scroll')
+     }
+ }
+ function showBackToTopBtnOnScroll(){
+    if(scrollY>500){
+        backToTop.classList.add('show')
     }else{
-        nav.classList.remove('scroll')
+        backToTop.classList.remove('show')
     }
-
-
 }
+
 function toggle(){
     document.body.classList.toggle('menu-expanded')
 }
@@ -32,6 +42,11 @@ ScrollReveal({
     #services .card
     #about, 
     #about header, 
-    #about .content`)
+    #about .content,  
+    #contact,
+    #contact header,
+    #contact .content, 
+    footer,
+    `)
 
 
