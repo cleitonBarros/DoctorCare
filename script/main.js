@@ -1,7 +1,9 @@
 
  const nav = document.getElementById('navigation')
  const backToTop = document.getElementById('backToTopButton')
- 
+ onScroll()
+ window.addEventListener('scroll',onScroll)
+
  function onScroll(){
      showNavOnScroll()
      showBackToTopBtnOnScroll()
@@ -31,7 +33,7 @@ function toggle(){
 
 ScrollReveal({
     origin: 'top',
-    distance: '50px',
+    distance: '10px',
     duration: 700,
   }).reveal(`
     #home, 
