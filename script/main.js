@@ -7,7 +7,39 @@
  function onScroll(){
      showNavOnScroll()
      showBackToTopBtnOnScroll()
+     activaMenuAtCurrentSection(home)
+     activaMenuAtCurrentSection(services)
+     activaMenuAtCurrentSection(about)
+     activaMenuAtCurrentSection(home)
  }
+ function activaMenuAtCurrentSection(section){
+    const targetLine =scrollY + innerHeight/2;
+
+
+    const sectionTop = section.offsetTop
+    const sectionHeight = section.offsetHeight
+
+    const sectionTopReachOrPassedTargetLine = targetLine >= sectionTop
+    //quando a seção termina
+    const sectionEndWhen = sectionTop + sectionHeight
+    const sectionEndPassedTargetLine = sectionEndWhen <= targetLine
+    //confição, ver se a seção passou da linha
+
+    //limite da seção
+
+    const sectionBoundaries = sectionTopReachOrPassedTargetLine  && !sectionEndPassedTargetLine
+
+    const menuElement = document.querySelector(`.menu a[href*=${section.getAttribute('id')}]`)
+
+    menuElement.classList.remove('active')
+
+    if(sectionBoundaries){
+        menuElement.classList.add('active')
+    }
+
+
+ }
+
  function showNavOnScroll(){
      if(scrollY>0){
          nav.classList.add('scroll')
@@ -23,9 +55,13 @@
     }
 }
 
-function toggle(){
-    document.body.classList.toggle('menu-expanded')
-}
+function openMenu() {
+    document.body.classList.add('menu-expanded')
+  }
+  
+  function closeMenu() {
+    document.body.classList.remove('menu-expanded')
+ }
 
 
 
@@ -33,7 +69,7 @@ function toggle(){
 
 ScrollReveal({
     origin: 'top',
-    distance: '10px',
+    distance: '30px',
     duration: 700,
   }).reveal(`
     #home, 
