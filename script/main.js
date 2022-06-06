@@ -65,13 +65,14 @@ function openMenu() {
 
 
 
+ const scrollReveal = ScrollReveal({
+    origin: 'top', 
+    distance: '30px', 
+    durantion: 600,
+    reset: true
+})
 
-
-ScrollReveal({
-    origin: 'top',
-    distance: '30px',
-    duration: 700,
-  }).reveal(`
+scrollReveal.reveal(`
     #home, 
     #home img, 
     #home .stats, 
@@ -84,7 +85,7 @@ ScrollReveal({
     #contact,
     #contact header,
     #contact .content, 
-    footer,
+    footer
     `)
 
 
