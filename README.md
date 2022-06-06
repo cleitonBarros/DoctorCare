@@ -1,13 +1,17 @@
 <h1 align="center">
-  <img  src=".assets/logo.svg" width="420px" />
+  <img  src="./assets/img/logo.svg" width="420px" />
 </h1>
 
 
 <h1 align="center">
-  <img  src=".assets/webpage.png" width="1200px" height="720px" />
+  <img  src="./assets/img/webpage.png" width="1024px" height="2200px"/>
 </h1>
 
 
+## 📱 Mobile 
+<h1 align="center">
+  <img  src="./assets/img/mobile.png width="1024px" height="2200px"/>
+</h1>
 
 ## 🚀 Tecnologias
 
