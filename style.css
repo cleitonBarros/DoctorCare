@@ -126,7 +126,7 @@ section .content p{
 #home::before{
     content: '';
     width: 100%;
-    height:min(calc(110% + var(--nav-height)));
+    height:calc(100rem + var(--nav-height));
     background-color: var(--brand-light);
     display: block;
   
