@@ -21,8 +21,8 @@
 
     const sectionTopReachOrPassedTargetLine = targetLine >= sectionTop
     //quando a seção termina
-    const sectionEndWhen = sectionTop + sectionHeight
-    const sectionEndPassedTargetLine = sectionEndWhen <= targetLine
+    const sectionEndWhen = sectionTop + sectionHeight 
+    const sectionEndPassedTargetLine = sectionEndWhen  <= targetLine
     //confição, ver se a seção passou da linha
 
     //limite da seção
@@ -68,7 +68,7 @@ function openMenu() {
  const scrollReveal = ScrollReveal({
     origin: 'top', 
     distance: '30px', 
-    durantion: 600,
+    durantion: 00,
     reset: true
 })
 
